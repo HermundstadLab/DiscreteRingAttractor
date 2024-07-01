@@ -40,6 +40,8 @@
 %to generate all figures, run: plotMSfigs(1:27)
 %-------------------------------------------------------------------------%
 
+%% ADD DIRECTORIES AND SUBDIRECTORIES TO CURRENT PATH
+addpath("alternateNetworkSimulations/","auxFunctions/","noiseSimulations/","auxFunctions/perceptually_uniform_colormaps_v1.3.2/Colormaps (5)/Colormaps","auxFunctions/redblue_v1.0.1")
 
 %% FIGURE 2A 
 plotMSfigs(1);        %plot connectivity matrix schematic
