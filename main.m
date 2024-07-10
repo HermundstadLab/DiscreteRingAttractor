@@ -2,7 +2,107 @@
 %                            MAIN SCRIPT                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%------------------------------ KEY --------------------------------------%
+% To generate all figure panels from the paper, run the following cells in order. 
+% Please refer to the key at bottom of this script for plot indices corresponding
+% to individual figure panels called by plotModelingFigs(index)
+
+%% SET THE DIRECTORY WHERE DATA IS STORED
+dataDir = 'data/';
+
+%% ADD DIRECTORIES AND SUBDIRECTORIES TO CURRENT PATH
+addpath("alternateNetworkSimulations/","auxFunctions/","noiseSimulations/",...
+  "auxFunctions/perceptually_uniform_colormaps_v1.3.2/Colormaps (5)/Colormaps",...
+  "auxFunctions/redblue_v1.0.1","auxFunctions/brewermap","auxFunctions/watsons_U2")
+
+%% FIGURE 1E,H-J; ED FIGS 1-2
+data = load([dataDir,'NoormanEtAlFlyWalkingInDarkness2PBehData.mat']);
+DarkData = data.DarkData;
+[analysisResults] = plotDataFigs(DarkData);
+
+%% FIGURE 2A 
+plotModelingFigs(1);        %plot connectivity matrix schematic
+
+%% FIGURE 2B
+plotModelingFigs(2);        %plot optimal JE          
+
+%% FIGURE 2E
+plotModelingFigs(3);        %plot energy heatmaps 
+
+%% Figure 2F-G
+plotModelingFigs([4,5]);    %plot bump trajectories with and without input   
+
+%% FIGURE 2H
+plotModelingFigs(6);        %plot connectivity matrices for different JE              
+
+%% FIGURE 3C
+plotModelingFigs(7);        %plot bump trajectories in different regimes, without input           
+
+%% FIGURE 3D
+plotModelingFigs(8);        %plot drift rates in different regimes                
+
+%% FIGURE 3E-F
+plotModelingFigs(9);        %plot simplified energy landscape, without input               
+
+%% FIGURE 3G, ED FIGURE 8G
+plotModelingFigs(10);       %plot bump trajectories in different regimes, varying JE, without input               
+
+%% FIGURE 3H
+plotModelingFigs(11);       %plot net drift speed             
+
+%% FIGURE I-J
+plotModelingFigs(12);       %plot simplified energy landscape, with input              
+
+%% FIGURE 3K, ED FIGURE 8G
+plotModelingFigs(13);       %plot bump trajectories in different regimes, varying JE, with input  
+
+%% FIGURE 3L
+plotModelingFigs(14);  %plot threshold velocity                        
+
+%% FIGURE 3L
+plotModelingFigs(15);       %plot linearity of integration                 
+
+%% FIGURE 4A-C, ED FIGURE 9A
+plotModelingFigs(16);       %plot robustness to parameter tuning                  
+
+%% FIGURE 4D-F, ED FIGURE 9B
+plotModelingFigs(17);       %plot noise robustness                
+
+%% ED FIGURE 3A
+plotModelingFigs(18);       %plot phase diagram                 
+
+%% ED FIGURE 3B-C
+plotModelingFigs(19);       %plot fixed point conditions                
+
+%% ED FIGURE 3D-I
+plotModelingFigs(20);       %plot linearization  
+
+%% ED FIGURE 4
+plotModelingFigs(21);       %plot eigenvalues of Hessian
+
+%% ED FIGURE 5
+run plotEDfig5.m
+
+%% ED FIGURE 6
+plotModelingFigs(22);       %plot leading eigenvalues without input
+
+%% ED FIGURE 7
+plotModelingFigs(23);       %plot leading eigenvalues with small input
+
+%% ED FIGURE 8B
+plotModelingFigs(24);       %plot drift speeds in different regimes, grayscale
+
+%% ED FIGURE 8C,E
+plotModelingFigs(25);       %plot example fixed points in different regimes as a function of input velocity 
+
+%% ED FIGURE 8D
+plotModelingFigs(26);       %plot all fixed points in different regimes for velocities below threshold
+
+%% ED FIGURE 8F
+plotModelingFigs(27);       %plot all fixed points in different regimes for velocities above threshold
+
+
+%---- INDEX KEY FOR PLOTTING MODELING RESULTS: PLOTMODELINGFIGS(INDEX) ---%
+% FIGURE 2
 %1: plotConnMat_Schematic                   % Fig 2A    
 %2: plotOptJE                               % Fig 2D
 %3: plotEnergyHeatmaps                      % Fig 2E
@@ -37,89 +137,5 @@
 %26: plotFixedPoints_regimes_belowThreshV   % ED Fig 8D
 %27: plotFixedPoints_regimes_aboveThreshV   % ED Fig 8F
 
-%to generate all figures, run: plotMSfigs(1:27)
+%to generate all modeling figures, run: plotModelingFigs(1:27)
 %-------------------------------------------------------------------------%
-
-%% ADD DIRECTORIES AND SUBDIRECTORIES TO CURRENT PATH
-addpath("alternateNetworkSimulations/","auxFunctions/","noiseSimulations/","auxFunctions/perceptually_uniform_colormaps_v1.3.2/Colormaps (5)/Colormaps","auxFunctions/redblue_v1.0.1")
-
-%% FIGURE 2A 
-plotMSfigs(1);        %plot connectivity matrix schematic
-
-%% FIGURE 2B
-plotMSfigs(2);        %plot optimal JE          
-
-%% FIGURE 2E
-plotMSfigs(3);        %plot energy heatmaps 
-
-%% Figure 2F-G
-plotMSfigs([4,5]);    %plot bump trajectories with and without input   
-
-%% FIGURE 2H
-plotMSfigs(6);        %plot connectivity matrices for different JE              
-
-%% FIGURE 3C
-plotMSfigs(7);        %plot bump trajectories in different regimes, without input           
-
-%% FIGURE 3D
-plotMSfigs(8);        %plot drift rates in different regimes                
-
-%% FIGURE 3E-F
-plotMSfigs(9);        %plot simplified energy landscape, without input               
-
-%% FIGURE 3G, ED FIGURE 8G
-plotMSfigs(10);       %plot bump trajectories in different regimes, varying JE, without input               
-
-%% FIGURE 3H
-plotMSfigs(11);       %plot net drift speed             
-
-%% FIGURE I-J
-plotMSfigs(12);       %plot simplified energy landscape, with input              
-
-%% FIGURE 3K, ED FIGURE 8G
-plotMSfigs(13);       %plot bump trajectories in different regimes, varying JE, with input  
-
-%% FIGURE 3L
-plotMSfigs(14);  %plot threshold velocity                        
-
-%% FIGURE 3L
-plotMSfigs(15);       %plot linearity of integration                 
-
-%% FIGURE 4A-C, ED FIGURE 9A
-plotMSfigs(16);       %plot robustness to parameter tuning                  
-
-%% FIGURE 4D-F, ED FIGURE 9B
-plotMSfigs(17);       %plot noise robustness                
-
-%% ED FIGURE 3A
-plotMSfigs(18);       %plot phase diagram                 
-
-%% ED FIGURE 3B-C
-plotMSfigs(19);       %plot fixed point conditions                
-
-%% ED FIGURE 3D-I
-plotMSfigs(20);       %plot linearization  
-
-%% ED FIGURE 4
-plotMSfigs(21);       %plot eigenvalues of Hessian
-
-%% ED FIGURE 5
-run plotEDfig5.m
-
-%% ED FIGURE 6
-plotMSfigs(22);       %plot leading eigenvalues without input
-
-%% ED FIGURE 7
-plotMSfigs(23);       %plot leading eigenvalues with small input
-
-%% ED FIGURE 8B
-plotMSfigs(24);       %plot drift speeds in different regimes, grayscale
-
-%% ED FIGURE 8C,E
-plotMSfigs(25);       %plot example fixed points in different regimes as a function of input velocity 
-
-%% ED FIGURE 8D
-plotMSfigs(26);       %plot all fixed points in different regimes for velocities below threshold
-
-%% ED FIGURE 8F
-plotMSfigs(27);       %plot all fixed points in different regimes for velocities above threshold
