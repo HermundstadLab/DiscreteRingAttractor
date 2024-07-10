@@ -1,4 +1,4 @@
-function plotMSfigs(plotInds)
+function plotModelingFigs(plotInds)
 
 %---------------------------- KEY FOR PLOTINDS ----------------------------%
 %1: plotConnMat_Schematic                   % Fig 2A    
