@@ -22,7 +22,7 @@ DarkData = data.DarkData;
 %% FIGURE 2A 
 plotModelingFigs(1);        %plot connectivity matrix schematic
 
-%% FIGURE 2B
+%% FIGURE 2D
 plotModelingFigs(2);        %plot optimal JE          
 
 %% FIGURE 2E
