@@ -80,7 +80,7 @@ plotModelingFigs(20);       %plot linearization
 plotModelingFigs(21);       %plot eigenvalues of Hessian
 
 %% ED FIGURE 5
-run plotEDfig5.m
+run plotAltNetworkSims.m    %run simulations for alternate networks and plot results
 
 %% ED FIGURE 6
 plotModelingFigs(22);       %plot leading eigenvalues without input
