@@ -19,8 +19,8 @@ threshNoFwd = eps;
 tStill = 0.3; % seconds with 0 ang vel to be considered not rotating
 EBsubdiv = 64;
 
-nRows = 5;
-nCols = 2;
+nRows = 2;
+nCols = 5;
 
 % Initialize output struct
 for k = 1:nTotalFlies
