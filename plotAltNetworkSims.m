@@ -18,7 +18,7 @@ p.flag_lin = 0;     % 1: threshold-linear transfers function; 0:logexp
 % estimate circular variance for varying excitation strength
 v = zeros(size(p.j1v));
 for i = 1:length(p.j1v)
-    disp(i/length(p.j1v))
+    % disp(i/length(p.j1v))
     p.J1 = p.j1v(i);
     % initial (psi0) and final (psi1) angles
     [psi0, psi1] = run_test(p); 
@@ -34,7 +34,7 @@ p.J0 = -20;
 % estimate circular variance for varying excitation strength
 v = zeros(size(p.j1v));
 for i = 1:length(p.j1v)
-    disp(i/length(p.j1v))
+    % disp(i/length(p.j1v))
     p.J1 = p.j1v(i);
     [psi0, psi1] = run_test(p);
     delta_angle = psi1 - psi0;
@@ -58,7 +58,7 @@ p.j1v = 15.9:.01:16.1;  %array of excitation strengths
 v = zeros(size(p.j1v));
 m = v;
 for i = 1:length(p.j1v)
-    disp(i/length(p.j1v))
+    % disp(i/length(p.j1v))
     p.J1 = p.j1v(i);
     % initial (psi0_1,psi0_2) and final (psi1_1,psi1_2) angles
     [psi0_1, psi0_2, psi1_1, psi1_2] = run_test_2d(p);
