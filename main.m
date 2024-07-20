@@ -14,10 +14,13 @@ addpath("alternateNetworkSimulations/","auxFunctions/","noiseSimulations/",...
   "auxFunctions/perceptually_uniform_colormaps_v1.3.2/Colormaps (5)/Colormaps",...
   "auxFunctions/redblue_v1.0.1","auxFunctions/brewermap","auxFunctions/watsons_U2")
 
-%% FIGURE 1E,H-J; ED FIGS 1-2
+%% FIGURE 1E,H,I; ED FIG 1
 data = load([dataDir,'NoormanEtAlFlyWalkingInDarkness2PBehData.mat']);
 DarkData = data.DarkData;
-[analysisResults] = plotDriftAnalysisFigs(DarkData);
+plotDriftAnalysisFigs(DarkData);
+
+%% FIGURE 1J; ED FIG 2
+plotVelocityAnalysisFigs(DarkData);
 
 %% FIGURE 2A 
 plotModelingFigs(1);        %plot connectivity matrix schematic
