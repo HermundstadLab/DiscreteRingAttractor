@@ -1,12 +1,6 @@
+function plotVelocityAnalysisFigs(DarkData)
+
 %% This script reproduces the bump velocity results in Figure 1 of Noorman et al 2024   
-
-close all;
-clear all;
-
-% Load the pre-processed data (this analysis relies on the 'FlyData' structure).
-DataDir = 'data';
-DataFile=[DataDir,'/NoormanEtAlFlyWalkingInDarkness2PBehData.mat'];
-load(DataFile)
 
 % Concatonate each fly's data across trials
 [FlyData]=Combine_Data_Across_Trials(DarkData);
