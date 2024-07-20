@@ -17,7 +17,7 @@ addpath("alternateNetworkSimulations/","auxFunctions/","noiseSimulations/",...
 %% FIGURE 1E,H-J; ED FIGS 1-2
 data = load([dataDir,'NoormanEtAlFlyWalkingInDarkness2PBehData.mat']);
 DarkData = data.DarkData;
-[analysisResults] = plotDataAnalysisFigs(DarkData);
+[analysisResults] = plotDriftAnalysisFigs(DarkData);
 
 %% FIGURE 2A 
 plotModelingFigs(1);        %plot connectivity matrix schematic
