@@ -1,5 +1,5 @@
 function [analysisResults] = plotDataAnalysisFigs(DarkData)
-% Perform analyses associated with Noorman et al. 2024 figures.
+% Perform drift analyses associated with Noorman et al. 2024 figures.
 
 % First, make a couple of sample plots of bump movement.
 % Examples used in Figure 1 of the paper below:
