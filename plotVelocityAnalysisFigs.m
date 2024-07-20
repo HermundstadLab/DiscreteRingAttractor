@@ -1,6 +1,6 @@
 function plotVelocityAnalysisFigs(DarkData)
 
-%% This script reproduces the bump velocity results in Figure 1 of Noorman et al 2024   
+%% This script reproduces the bump velocity results in Figure 1 of Noorman et al 2024
 
 % Concatonate each fly's data across trials
 [FlyData]=Combine_Data_Across_Trials(DarkData);
